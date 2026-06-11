@@ -1,0 +1,2408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Clínica Fisio Ramírez · Fisioterapia profesional en Barcelona. Tratamientos personalizados. 654 321 987.">
+<meta name="theme-color" content="#0F3D2E">
+<title>Clínica Fisio Ramírez · Fisioterapia en Barcelona</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #0F3D2E;
+    --green-deep: #082519;
+    --green-soft: #1F5240;
+    --green-mist: #4A7062;
+    --bone: #F2EDE2;
+    --bone-soft: #E8DFCB;
+    --warm: #EDE5D2;
+    --terracotta: #C8704F;
+    --terracotta-deep: #A85937;
+    --terracotta-soft: #E8AE93;
+    --gold: #D4A574;
+    --ink: #1A1A1A;
+    --silver: #9C9990;
+    --stone: #6B6862;
+    --white: #FFFFFF;
+    
+    --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--bone);
+    color: var(--ink);
+    overflow-x: hidden;
+    line-height: 1.5;
+  }
+  ::selection { background: var(--terracotta); color: var(--white); }
+
+  /* ─── TOPBAR ─── */
+  .topbar {
+    background: var(--green-deep);
+    color: rgba(242,237,226,0.7);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 11px 0;
+    position: relative;
+    z-index: 90;
+  }
+  .topbar-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .topbar a { color: var(--bone); text-decoration: none; transition: color 0.2s; }
+  .topbar a:hover { color: var(--terracotta-soft); }
+  .topbar .blink {
+    width: 7px; height: 7px;
+    background: #5FD982;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    animation: blink 2.4s infinite;
+    box-shadow: 0 0 10px #5FD982;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* ─── NAV ─── */
+  nav {
+    background: rgba(242,237,226,0.93);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(15,61,46,0.08);
+    transition: padding 0.3s;
+  }
+  .nav-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 84px;
+  }
+  
+  /* ─── LOGO MONOGRAM ─── */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .logo-mark {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .logo-mark svg { width: 100%; height: 100%; }
+  .logo-mark .ring-rotate {
+    animation: spin 24s linear infinite;
+    transform-origin: center;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.95;
+  }
+  .logo-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.025em;
+    color: var(--green);
+    font-variation-settings: "opsz" 144;
+  }
+  .logo-name em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+  .logo-tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    color: var(--stone);
+    text-transform: uppercase;
+    margin-top: 5px;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0;
+    align-items: center;
+  }
+  .nav-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--stone);
+    text-decoration: none;
+    padding: 12px 18px;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a .n { color: var(--terracotta); margin-right: 4px; }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: var(--terracotta);
+    transition: width 0.3s var(--ease-out);
+    transform: translateX(-50%);
+  }
+  .nav-links a:hover { color: var(--green); }
+  .nav-links a:hover::after { width: 50%; }
+  .nav-cta {
+    background: var(--green);
+    color: var(--bone) !important;
+    padding: 14px 22px !important;
+    border-radius: 100px;
+    margin-left: 12px;
+    transition: all 0.3s var(--ease-out);
+  }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--terracotta); transform: translateY(-2px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--green);
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0 80px;
+    background-image:
+      radial-gradient(ellipse at 75% 30%, rgba(200,112,79,0.15) 0%, transparent 55%),
+      radial-gradient(ellipse at 15% 80%, rgba(212,165,116,0.06) 0%, transparent 45%),
+      linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--grain);
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  
+  /* Anatomical SVG illustration */
+  .hero-anatomy {
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    height: 580px;
+    z-index: 2;
+    opacity: 0.7;
+    animation: float 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(-50%); }
+    50% { transform: translateY(-52%); }
+  }
+  
+  /* Vertical decorative text */
+  .hero-side-text {
+    position: absolute;
+    right: 36px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: right center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: rgba(242,237,226,0.25);
+    text-transform: uppercase;
+    z-index: 5;
+    white-space: nowrap;
+  }
+  .hero-side-text::before {
+    content: '— ';
+    color: var(--terracotta);
+  }
+  
+  .hero-content {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 36px;
+    position: relative;
+    z-index: 4;
+    width: 100%;
+  }
+  
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(242,237,226,0.55);
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: slideUp 0.8s 0.1s var(--ease-out) forwards;
+  }
+  .hero-tag .dot {
+    width: 7px; height: 7px;
+    background: #5FD982;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #5FD982;
+    animation: blink 2.4s infinite;
+  }
+  .hero-tag .line { width: 36px; height: 1px; background: var(--terracotta); }
+  
+  h1.hero-h {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(56px, 9vw, 132px);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    color: var(--bone);
+    margin-bottom: 36px;
+    font-variation-settings: "opsz" 144, "SOFT" 80;
+    max-width: 720px;
+    opacity: 0;
+    animation: slideUp 1s 0.2s var(--ease-out) forwards;
+  }
+  h1.hero-h em {
+    font-style: italic;
+    color: var(--terracotta);
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+  }
+  h1.hero-h em::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: -2%;
+    width: 104%;
+    height: 6px;
+    background: var(--terracotta);
+    opacity: 0.18;
+    z-index: -1;
+  }
+  h1.hero-h .outline {
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(242,237,226,0.45);
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(242,237,226,0.7);
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: slideUp 0.8s 0.4s var(--ease-out) forwards;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    opacity: 0;
+    animation: slideUp 0.8s 0.6s var(--ease-out) forwards;
+  }
+  
+  .btn-accent {
+    background: var(--terracotta);
+    color: var(--bone);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 20px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.3s var(--ease-out);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-accent::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--terracotta-deep);
+    transform: translateY(100%);
+    transition: transform 0.4s var(--ease-out);
+    z-index: 0;
+  }
+  .btn-accent > * { position: relative; z-index: 1; }
+  .btn-accent:hover::before { transform: translateY(0); }
+  .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(200,112,79,0.35); }
+  .btn-accent .arrow {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--bone);
+    color: var(--terracotta);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+  }
+  .btn-accent:hover .arrow { transform: rotate(-45deg); background: var(--bone); color: var(--terracotta-deep); }
+  
+  .btn-ghost-w {
+    color: rgba(242,237,226,0.8);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 20px 26px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(242,237,226,0.25);
+    transition: all 0.2s;
+  }
+  .btn-ghost-w:hover { color: var(--bone); text-decoration-color: var(--terracotta); text-decoration-thickness: 2px; }
+  
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 56px;
+    width: fit-content;
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(242,237,226,0.1);
+    opacity: 0;
+    animation: slideUp 0.8s 0.8s var(--ease-out) forwards;
+  }
+  .stat-n {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 54px;
+    color: var(--bone);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variation-settings: "opsz" 144;
+  }
+  .stat-n em {
+    color: var(--terracotta);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .stat-l {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(242,237,226,0.45);
+    margin-top: 10px;
+  }
+
+  /* ─── STRIP ─── */
+  .strip {
+    background: var(--terracotta);
+    background-image: linear-gradient(90deg, var(--terracotta) 0%, var(--terracotta-deep) 50%, var(--terracotta) 100%);
+    padding: 18px 0;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid var(--terracotta-deep);
+    border-bottom: 1px solid var(--terracotta-deep);
+  }
+  .strip-track {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 35s linear infinite;
+    will-change: transform;
+  }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+  .strip-item {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    color: var(--bone);
+    padding: 0 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-variation-settings: "opsz" 144;
+  }
+  .strip-item .sep { font-style: normal; color: var(--green-deep); font-size: 14px; }
+
+  /* ─── SECTION BASE ─── */
+  section.s { padding: 130px 0; position: relative; }
+  .container { max-width: 1320px; margin: 0 auto; padding: 0 36px; }
+  
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 28px;
+  }
+  .tag .num {
+    background: var(--terracotta);
+    color: var(--bone);
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+  .tag .label { color: var(--stone); }
+  
+  .sec-h {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(42px, 6.5vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
+    color: var(--green);
+    font-variation-settings: "opsz" 144, "SOFT" 60;
+  }
+  .sec-h em { font-style: italic; color: var(--terracotta); font-weight: 400; }
+  
+  .sec-desc {
+    font-size: 17px;
+    color: var(--stone);
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── SERVICIOS ─── */
+  #servicios { background: var(--warm); }
+  .srv-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 72px;
+  }
+  .srv-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--green);
+    border: 1px solid var(--green);
+  }
+  .srv-card {
+    background: var(--bone);
+    padding: 44px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s var(--ease-out);
+    cursor: default;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  .srv-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--green);
+    transform: translateY(101%);
+    transition: transform 0.5s var(--ease-out);
+    z-index: 1;
+  }
+  .srv-card > * { position: relative; z-index: 2; transition: color 0.3s; }
+  .srv-card:hover::before { transform: translateY(0); }
+  .srv-card:hover .srv-num { color: var(--terracotta); }
+  .srv-card:hover h3 { color: var(--bone); }
+  .srv-card:hover p { color: rgba(242,237,226,0.7); }
+  .srv-card:hover .srv-icon {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+  }
+  .srv-card:hover .srv-icon svg { stroke: var(--bone); }
+  
+  .srv-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+  .srv-icon {
+    width: 54px; height: 54px;
+    background: var(--bone);
+    border: 1px solid var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    border-radius: 50%;
+  }
+  .srv-icon svg {
+    width: 26px; height: 26px;
+    stroke: var(--green);
+    fill: none;
+    stroke-width: 1.5;
+    transition: stroke 0.3s;
+  }
+  .srv-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--silver);
+    text-transform: uppercase;
+  }
+  .srv-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 14px;
+    color: var(--green);
+  }
+  .srv-card p {
+    font-size: 14px;
+    color: var(--stone);
+    line-height: 1.7;
+    flex-grow: 1;
+  }
+
+  /* ─── PROCESO ─── */
+  #proceso {
+    background: var(--bone);
+  }
+  .proceso-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 80px;
+  }
+  .proceso-header .tag { justify-content: center; }
+  .proceso-header .sec-desc { margin: 32px auto 0; }
+  
+  .proceso-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    position: relative;
+  }
+  .proceso-grid::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, var(--terracotta) 0, var(--terracotta) 6px, transparent 6px, transparent 12px);
+    z-index: 0;
+    opacity: 0.4;
+  }
+  
+  .step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 16px;
+  }
+  .step-circle {
+    width: 72px;
+    height: 72px;
+    background: var(--bone);
+    border: 1.5px solid var(--terracotta);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 26px;
+    color: var(--terracotta);
+    position: relative;
+    transition: transform 0.3s var(--ease-out);
+  }
+  .step:hover .step-circle {
+    transform: scale(1.08);
+    background: var(--terracotta);
+    color: var(--bone);
+  }
+  .step-circle::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 1px solid var(--terracotta);
+    border-radius: 50%;
+    opacity: 0.25;
+  }
+  .step h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    color: var(--green);
+  }
+  .step p {
+    font-size: 14px;
+    color: var(--stone);
+    line-height: 1.7;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  /* ─── NOSOTROS ─── */
+  #nosotros { background: var(--warm); }
+  .why-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .why-card {
+    background: var(--green);
+    color: var(--bone);
+    padding: 64px 48px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    background-image:
+      radial-gradient(ellipse at 70% 30%, rgba(200,112,79,0.18) 0%, transparent 50%),
+      linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
+  }
+  .why-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--grain);
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  
+  .why-seal {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 2;
+  }
+  .why-seal svg { width: 100%; height: 100%; animation: spin 28s linear infinite; }
+  
+  .why-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 42px;
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+    font-variation-settings: "opsz" 144, "SOFT" 60;
+    position: relative;
+    z-index: 2;
+  }
+  .why-card h3 em { font-style: italic; color: var(--terracotta); font-weight: 400; }
+  .why-card > p {
+    color: rgba(242,237,226,0.7);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .why-checks {
+    list-style: none;
+    position: relative;
+    z-index: 2;
+  }
+  .why-checks li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(242,237,226,0.1);
+    font-family: 'Barlow Condensed', 'Manrope', sans-serif;
+    font-size: 14px;
+    color: var(--bone);
+  }
+  .why-checks li:last-child { border-bottom: none; }
+  .why-checks .ck {
+    width: 22px; height: 22px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .why-checks .ck svg {
+    width: 12px; height: 12px;
+    stroke: var(--bone);
+    fill: none;
+    stroke-width: 3;
+  }
+  
+  .why-points { display: flex; flex-direction: column; }
+  .why-point {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 24px;
+    padding: 36px 0;
+    border-top: 1px solid rgba(15,61,46,0.1);
+    align-items: start;
+    cursor: default;
+    transition: padding-left 0.3s var(--ease-out);
+  }
+  .why-point:last-child { border-bottom: 1px solid rgba(15,61,46,0.1); }
+  .why-point:hover { padding-left: 12px; }
+  .why-n {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 60px;
+    color: var(--terracotta);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    font-variation-settings: "opsz" 144;
+  }
+  .why-point:hover .why-n { opacity: 1; }
+  .why-text h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    color: var(--green);
+    line-height: 1.2;
+  }
+  .why-text p {
+    font-size: 14px;
+    color: var(--stone);
+    line-height: 1.7;
+  }
+
+  /* ─── OPINIONES ─── */
+  #opiniones { background: var(--bone); }
+  .rev-header {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 64px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(15,61,46,0.1);
+  }
+  .score-box {
+    background: var(--warm);
+    padding: 32px 36px;
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    position: relative;
+    border-radius: 4px;
+  }
+  .score-box::before {
+    content: 'GOOGLE';
+    position: absolute;
+    top: -10px;
+    right: 24px;
+    background: var(--bone);
+    padding: 0 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--silver);
+  }
+  .score-big {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 88px;
+    line-height: 0.9;
+    color: var(--green);
+    letter-spacing: -0.04em;
+    font-variation-settings: "opsz" 144;
+  }
+  .score-stars {
+    color: #F59E0B;
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+  }
+  .score-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--stone);
+    text-transform: uppercase;
+  }
+  .rev-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .rev-card {
+    background: var(--warm);
+    padding: 36px 32px;
+    position: relative;
+    transition: all 0.3s var(--ease-out);
+    border-radius: 4px;
+    border: 1px solid transparent;
+  }
+  .rev-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--terracotta);
+    box-shadow: 0 20px 40px -10px rgba(15,61,46,0.12);
+  }
+  .rev-q {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 64px;
+    color: var(--terracotta);
+    opacity: 0.2;
+    line-height: 0.7;
+    height: 22px;
+    margin-bottom: 16px;
+    font-variation-settings: "opsz" 144;
+  }
+  .rev-stars {
+    color: #F59E0B;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+  .rev-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .rev-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid rgba(15,61,46,0.1);
+  }
+  .rev-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    color: var(--green);
+  }
+  .rev-when {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--silver);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: right;
+  }
+
+  /* ─── CTA BANDA ─── */
+  .cta-band {
+    background: var(--green);
+    background-image: linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
+    padding: 110px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--grain);
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  .cta-bg-text {
+    position: absolute;
+    bottom: -8%;
+    right: -3%;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(220px, 30vw, 480px);
+    color: rgba(242,237,226,0.04);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    pointer-events: none;
+    font-variation-settings: "opsz" 144;
+    white-space: nowrap;
+  }
+  .cta-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 36px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .cta-inner h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(44px, 7vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--bone);
+    font-variation-settings: "opsz" 144, "SOFT" 80;
+  }
+  .cta-inner h2 em { font-style: italic; color: var(--terracotta); }
+  .cta-inner p {
+    color: rgba(242,237,226,0.65);
+    font-size: 16px;
+    line-height: 1.65;
+    margin-top: 22px;
+  }
+  .cta-right {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-end;
+  }
+  .btn-bone {
+    background: var(--bone);
+    color: var(--green);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 22px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.3s var(--ease-out);
+    width: fit-content;
+  }
+  .btn-bone:hover { background: var(--terracotta); color: var(--bone); transform: translateY(-2px); }
+  .btn-wa {
+    background: #25D366;
+    color: var(--bone);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 14px 22px;
+    border-radius: 100px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s var(--ease-out);
+  }
+  .btn-wa:hover { background: #1FAE54; transform: translateY(-2px); }
+
+  /* ─── FAQ ─── */
+  #faq { background: var(--bone); }
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item {
+    border-top: 1px solid rgba(15,61,46,0.12);
+    padding: 32px 0;
+    cursor: pointer;
+    transition: padding-left 0.3s var(--ease-out);
+  }
+  .faq-item:last-child { border-bottom: 1px solid rgba(15,61,46,0.12); }
+  .faq-item:hover { padding-left: 16px; }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .faq-q h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    color: var(--green);
+  }
+  .faq-toggle {
+    width: 38px; height: 38px;
+    border: 1px solid var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s var(--ease-out);
+    position: relative;
+  }
+  .faq-toggle::before,
+  .faq-toggle::after {
+    content: '';
+    position: absolute;
+    background: var(--green);
+    transition: all 0.3s var(--ease-out);
+  }
+  .faq-toggle::before { width: 12px; height: 1px; }
+  .faq-toggle::after { width: 1px; height: 12px; }
+  .faq-item.open .faq-toggle {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+  }
+  .faq-item.open .faq-toggle::before,
+  .faq-item.open .faq-toggle::after { background: var(--bone); }
+  .faq-item.open .faq-toggle::after { transform: rotate(90deg); opacity: 0; }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s var(--ease-out), padding-top 0.3s;
+    color: var(--stone);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .faq-item.open .faq-a {
+    max-height: 320px;
+    padding-top: 20px;
+  }
+
+  /* ─── CONTACTO ─── */
+  #contacto { background: var(--warm); }
+  .contact-hd { margin-bottom: 64px; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .info-block {
+    background: var(--bone);
+    padding: 44px 36px;
+    border-radius: 4px;
+    border: 1px solid rgba(15,61,46,0.06);
+  }
+  .info-block h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--terracotta);
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .info-block h3 svg { width: 22px; height: 22px; stroke: var(--terracotta); fill: none; stroke-width: 1.5; }
+  
+  .sch-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(15,61,46,0.06);
+    font-size: 15px;
+  }
+  .sch-row:last-child { border-bottom: none; }
+  .sch-day {
+    font-family: 'Barlow Condensed', 'Manrope', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: var(--green);
+  }
+  .sch-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    letter-spacing: 0.5px;
+  }
+  .sch-closed {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--silver);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  .contact-rows { display: flex; flex-direction: column; }
+  .c-row {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(15,61,46,0.06);
+    align-items: center;
+  }
+  .c-row:last-child { border-bottom: none; }
+  .c-icon {
+    width: 48px; height: 48px;
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .c-row:hover .c-icon { background: var(--terracotta); }
+  .c-icon svg { width: 20px; height: 20px; stroke: var(--bone); fill: none; stroke-width: 1.5; }
+  .c-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--silver);
+    text-transform: uppercase;
+  }
+  .c-val {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--green);
+    text-decoration: none;
+    display: block;
+    margin-top: 3px;
+    transition: color 0.2s;
+  }
+  .c-val:hover { color: var(--terracotta); }
+  
+  .map-box {
+    background: var(--green-deep);
+    position: relative;
+    overflow: hidden;
+    min-height: 380px;
+    grid-column: span 2;
+    border-radius: 4px;
+  }
+  .map-box iframe {
+    width: 100%; height: 100%;
+    border: none;
+    position: absolute;
+    inset: 0;
+    filter: grayscale(70%) contrast(1.1);
+    transition: filter 0.4s;
+  }
+  .map-box:hover iframe { filter: grayscale(0%); }
+  .map-overlay {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: var(--green-deep);
+    padding: 14px 22px;
+    color: var(--bone);
+    z-index: 5;
+    pointer-events: none;
+    border-radius: 4px;
+  }
+  .map-overlay .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    color: var(--terracotta);
+  }
+  .map-overlay .place {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    margin-top: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ─── FLOAT BUTTONS ─── */
+  .float-btns {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+  .float-b {
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    transition: all 0.25s var(--ease-out);
+    position: relative;
+  }
+  .float-b::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    animation: pulse-ring 2.4s infinite;
+  }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 currentColor; }
+    100% { box-shadow: 0 0 0 14px transparent; }
+  }
+  .float-b svg { width: 26px; height: 26px; fill: var(--bone); }
+  .float-b:hover { transform: scale(1.1) translateY(-2px); }
+  .float-call { background: var(--terracotta); color: var(--terracotta); }
+  .float-wa { background: #25D366; color: #25D366; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--green-deep);
+    color: var(--bone);
+    padding: 80px 0 40px;
+    position: relative;
+    overflow: hidden;
+    background-image: 
+      radial-gradient(ellipse at 70% 20%, rgba(200,112,79,0.08) 0%, transparent 50%),
+      linear-gradient(180deg, var(--green-deep) 0%, #051811 100%);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 64px;
+  }
+  .foot-brand .logo { margin-bottom: 0; }
+  .foot-brand .logo-name { color: var(--bone); }
+  .foot-brand .logo-name em { color: var(--terracotta); }
+  .foot-brand .logo-tagline { color: var(--terracotta); }
+  .foot-p {
+    color: rgba(242,237,226,0.55);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 24px;
+    max-width: 340px;
+  }
+  .foot-col h5 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: var(--terracotta);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(242,237,226,0.1);
+    position: relative;
+  }
+  .foot-col h5::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 32px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li { padding: 6px 0; }
+  .foot-col a {
+    color: rgba(242,237,226,0.5);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  .foot-col a:hover { color: var(--terracotta); padding-left: 6px; }
+  
+  .foot-contact-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: rgba(242,237,226,0.5);
+    line-height: 1.5;
+  }
+  .foot-contact-item svg {
+    width: 18px; height: 18px;
+    stroke: var(--terracotta);
+    fill: none;
+    stroke-width: 1.5;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .foot-contact-item a {
+    color: rgba(242,237,226,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .foot-contact-item a:hover { color: var(--terracotta); }
+
+  .foot-mega {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(110px, 22vw, 360px);
+    line-height: 0.78;
+    letter-spacing: -0.04em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(242,237,226,0.06);
+    margin: 60px 0 32px;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+    font-variation-settings: "opsz" 144;
+  }
+  
+  .foot-bot {
+    border-top: 1px solid rgba(242,237,226,0.1);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(242,237,226,0.3);
+    letter-spacing: 1px;
+  }
+  .foot-bot .accent { color: var(--terracotta); }
+
+  /* ════════════════════════════════════════════════
+     PREMIUM UPGRADES
+     ════════════════════════════════════════════════ */
+
+  /* ─── SCROLL PROGRESS BAR ─── */
+  .scroll-prog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--terracotta);
+    z-index: 9999;
+    transition: width 0.08s linear;
+    box-shadow: 0 0 12px rgba(200,112,79,0.5);
+  }
+
+  /* ─── CUSTOM CURSOR (always visible, no blend mode) ─── */
+  .cursor-dot, .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    border-radius: 50%;
+    transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out), background 0.25s, border-color 0.25s, opacity 0.3s;
+  }
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--terracotta);
+    border: 2px solid var(--bone);
+    box-shadow: 0 0 0 1px var(--green-deep), 0 2px 8px rgba(0,0,0,0.3);
+    margin: -4px 0 0 -4px;
+  }
+  .cursor-ring {
+    width: 38px;
+    height: 38px;
+    border: 1.5px solid var(--terracotta);
+    background: transparent;
+    box-shadow: 0 0 0 1px rgba(242,237,226,0.4);
+    margin: -19px 0 0 -19px;
+  }
+  body.cursor-hover .cursor-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--bone);
+    border-width: 1px;
+    margin: -2px 0 0 -2px;
+  }
+  body.cursor-hover .cursor-ring {
+    width: 56px;
+    height: 56px;
+    background: var(--terracotta);
+    border-color: var(--bone);
+    margin: -28px 0 0 -28px;
+    box-shadow: 0 0 0 1.5px var(--green-deep), 0 12px 32px rgba(200,112,79,0.4);
+  }
+  @media (max-width: 900px) {
+    .cursor-dot, .cursor-ring { display: none; }
+  }
+  @media (hover: none) {
+    .cursor-dot, .cursor-ring { display: none; }
+  }
+  body { cursor: none; }
+  @media (hover: none) { body { cursor: default; } }
+  @media (max-width: 900px) { body { cursor: default; } }
+
+  /* ─── HERO WORD REVEAL ANIMATION ─── */
+  /* Override the old hero-h animation */
+  h1.hero-h { animation: none !important; opacity: 1 !important; }
+  .ww {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    line-height: 1;
+    padding-bottom: 0.1em;
+  }
+  .ww > .w {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: word-reveal 1.2s var(--ease-out) forwards;
+    line-height: 1;
+  }
+  h1.hero-h .ww:nth-of-type(1) > .w { animation-delay: 0.05s; }
+  h1.hero-h .ww:nth-of-type(2) > .w { animation-delay: 0.18s; }
+  h1.hero-h .ww:nth-of-type(3) > .w { animation-delay: 0.35s; }
+  h1.hero-h .ww:nth-of-type(4) > .w { animation-delay: 0.5s; }
+  @keyframes word-reveal {
+    0% { transform: translateY(110%); }
+    100% { transform: translateY(0); }
+  }
+  /* Style outline class on the .w span */
+  h1.hero-h .w.outline {
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(242,237,226,0.45);
+  }
+
+  /* ─── HERO COORDINATE LABEL ─── */
+  .hero-coords {
+    position: absolute;
+    bottom: 44px;
+    left: 36px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: rgba(242,237,226,0.4);
+    text-transform: uppercase;
+    z-index: 6;
+    opacity: 0;
+    animation: fadeIn 1s 1.4s var(--ease-out) forwards;
+  }
+  .hero-coords .lbl {
+    color: var(--terracotta);
+    margin-right: 12px;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+
+  /* ─── SCROLL HINT ─── */
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    right: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: rgba(242,237,226,0.45);
+    text-transform: uppercase;
+    z-index: 6;
+    opacity: 0;
+    animation: fadeIn 1s 1.4s var(--ease-out) forwards;
+  }
+  .hero-scroll .line {
+    width: 1px;
+    height: 56px;
+    background: rgba(242,237,226,0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-scroll .line::after {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, transparent 0%, var(--terracotta) 50%, transparent 100%);
+    animation: scroll-line 2.4s ease-in-out infinite;
+  }
+  @keyframes scroll-line {
+    0% { top: -60%; }
+    100% { top: 110%; }
+  }
+
+  /* ─── FLOATING ACCENT DOT ─── */
+  .hero-float-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    top: 32%;
+    left: 7%;
+    z-index: 3;
+    box-shadow: 0 0 20px rgba(200,112,79,0.6), 0 0 40px rgba(200,112,79,0.3);
+    animation: float-around 14s ease-in-out infinite;
+    opacity: 0;
+    animation: float-around 14s ease-in-out infinite, fadeIn 1s 1s var(--ease-out) forwards;
+  }
+  @keyframes float-around {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(20px, -30px); }
+    50% { transform: translate(-15px, 35px); }
+    75% { transform: translate(30px, 15px); }
+  }
+
+  /* ─── MAGNETIC BUTTON ─── */
+  [data-magnetic] {
+    transition: transform 0.3s var(--ease-out), background 0.3s, box-shadow 0.3s !important;
+    will-change: transform;
+  }
+  [data-magnetic] > * {
+    pointer-events: none;
+  }
+
+  /* ─── ANIMATED COUNTERS ─── */
+  .stat-n [data-count] {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1100px) {
+    .srv-header, .why-layout, .rev-header, .cta-inner, .foot-grid, .faq-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .srv-grid { grid-template-columns: repeat(2, 1fr); }
+    .proceso-grid { grid-template-columns: repeat(2, 1fr); gap: 48px; }
+    .proceso-grid::before { display: none; }
+    .rev-grid { grid-template-columns: 1fr; }
+    .cta-right { align-items: flex-start; }
+    .hero-anatomy { display: none; }
+  }
+  @media (max-width: 720px) {
+    .topbar { font-size: 10px; }
+    .topbar-inner { padding: 0 20px; flex-direction: column; gap: 6px; }
+    .nav-links { display: none; }
+    .nav-cta { display: inline-flex !important; padding: 11px 18px !important; }
+    .nav-inner { padding: 0 20px; height: 72px; }
+    .hero { padding: 80px 0 60px; }
+    .hero-content, .container, .cta-inner { padding: 0 20px; }
+    section.s { padding: 80px 0; }
+    .srv-grid { grid-template-columns: 1fr; }
+    .proceso-grid { grid-template-columns: 1fr; }
+    .hero-side-text { display: none; }
+    .hero-coords, .hero-scroll, .hero-float-dot { display: none; }
+    .hero-stats { gap: 28px; grid-template-columns: repeat(2, 1fr); }
+    .why-card { padding: 40px 28px; }
+    .info-block { padding: 32px 24px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+    .map-box { grid-column: span 1; min-height: 320px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── SCROLL PROGRESS BAR ─── -->
+<div class="scroll-prog" id="scrollProg"></div>
+
+<!-- ─── CUSTOM CURSOR ─── -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ─── TOPBAR ─── -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span><span class="blink"></span>Abierto ahora · Lun–Vie: 9:00–20:00</span>
+    <span>
+      📍 Barcelona &nbsp;·&nbsp;
+      <a href="tel:654321987">654 321 987</a>
+    </span>
+  </div>
+</div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#inicio" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 60 60">
+          <g class="ring-rotate">
+            <circle cx="30" cy="30" r="28" fill="none" stroke="#C8704F" stroke-width="0.5" stroke-dasharray="1.5 3"/>
+            <circle cx="30" cy="2" r="1.5" fill="#C8704F"/>
+            <circle cx="30" cy="58" r="1.5" fill="#C8704F"/>
+            <circle cx="2" cy="30" r="1.5" fill="#C8704F"/>
+            <circle cx="58" cy="30" r="1.5" fill="#C8704F"/>
+          </g>
+          <circle cx="30" cy="30" r="22" fill="#0F3D2E"/>
+          <text x="30" y="38" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="22" fill="#F2EDE2">F</text>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Fisio Ramírez<em>.</em></span>
+        <span class="logo-tagline">— Fisioterapia · Barcelona</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#servicios"><span class="n">01</span>Servicios</a></li>
+      <li><a href="#proceso"><span class="n">02</span>Proceso</a></li>
+      <li><a href="#nosotros"><span class="n">03</span>Nosotros</a></li>
+      <li><a href="#opiniones"><span class="n">04</span>Opiniones</a></li>
+      <li><a href="#contacto"><span class="n">05</span>Contacto</a></li>
+      <li><a href="tel:654321987" class="nav-cta">Pedir cita →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="inicio">
+  <!-- Anatomical SVG illustration -->
+  <div class="hero-anatomy">
+    <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer ring decoration -->
+      <circle cx="100" cy="30" r="22" fill="none" stroke="#F2EDE2" stroke-width="0.5" opacity="0.35"/>
+      <circle cx="100" cy="30" r="28" fill="none" stroke="#C8704F" stroke-width="0.4" stroke-dasharray="2 3" opacity="0.4"/>
+      
+      <!-- Central vertical line (spine) -->
+      <line x1="100" y1="55" x2="100" y2="370" stroke="#F2EDE2" stroke-width="0.8" opacity="0.3"/>
+      
+      <!-- Vertebrae ellipses -->
+      <g stroke="#F2EDE2" stroke-width="0.5" fill="none" opacity="0.5">
+        <ellipse cx="100" cy="75" rx="16" ry="5"/>
+        <ellipse cx="100" cy="100" rx="18" ry="5"/>
+        <ellipse cx="100" cy="125" rx="20" ry="5"/>
+        <ellipse cx="100" cy="150" rx="22" ry="5"/>
+        <ellipse cx="100" cy="175" rx="24" ry="5"/>
+        <ellipse cx="100" cy="200" rx="26" ry="5"/>
+        <ellipse cx="100" cy="225" rx="28" ry="5"/>
+        <ellipse cx="100" cy="250" rx="28" ry="5"/>
+        <ellipse cx="100" cy="275" rx="26" ry="5"/>
+        <ellipse cx="100" cy="300" rx="24" ry="5"/>
+        <ellipse cx="100" cy="325" rx="22" ry="5"/>
+        <ellipse cx="100" cy="350" rx="20" ry="5"/>
+      </g>
+      
+      <!-- Side curves (like hands flanking the body) -->
+      <path d="M 50 100 Q 35 200, 50 300" fill="none" stroke="#F2EDE2" stroke-width="0.6" opacity="0.25"/>
+      <path d="M 150 100 Q 165 200, 150 300" fill="none" stroke="#F2EDE2" stroke-width="0.6" opacity="0.25"/>
+      
+      <!-- Accent points (chakras/key points) — pulsing -->
+      <circle cx="100" cy="150" r="4" fill="#C8704F" opacity="0.85">
+        <animate attributeName="r" values="4;7;4" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.85;0.3;0.85" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="100" cy="220" r="5" fill="#C8704F" opacity="0.85">
+        <animate attributeName="r" values="5;8;5" dur="3.5s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.85;0.3;0.85" dur="3.5s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="100" cy="290" r="4" fill="#C8704F" opacity="0.85">
+        <animate attributeName="r" values="4;7;4" dur="3s" begin="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.85;0.3;0.85" dur="3s" begin="2s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Tiny dots decorating spine -->
+      <g fill="#F2EDE2" opacity="0.6">
+        <circle cx="60" cy="200" r="1.5"/>
+        <circle cx="140" cy="200" r="1.5"/>
+        <circle cx="55" cy="240" r="1"/>
+        <circle cx="145" cy="240" r="1"/>
+      </g>
+      
+      <!-- Technical labels in monospace -->
+      <g fill="#F2EDE2" opacity="0.3" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="1">
+        <text x="60" y="153" text-anchor="end">— C7</text>
+        <text x="140" y="223" text-anchor="start">L3 —</text>
+        <text x="60" y="293" text-anchor="end">— S2</text>
+      </g>
+    </svg>
+  </div>
+  
+  <div class="hero-side-text">Barcelona · est. 12 años</div>
+  
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      <span>Fisioterapia · Barcelona</span>
+      <span class="line"></span>
+      <span>4.8 ★ Google</span>
+    </div>
+    
+    <h1 class="hero-h">
+      <span class="ww"><span class="w">Tu</span></span>
+      <span class="ww"><span class="w"><em>recuperación</em></span></span><br>
+      <span class="ww"><span class="w">en manos</span></span><br>
+      <span class="ww"><span class="w outline">expertas.</span></span>
+    </h1>
+    
+    <p class="hero-sub">Fisioterapia especializada en Barcelona. Tratamos lesiones deportivas, dolores de espalda, rehabilitación postoperatoria y mucho más. Más de 12 años cuidando a nuestros pacientes.</p>
+    
+    <div class="hero-actions">
+      <a href="tel:654321987" class="btn-accent" data-magnetic>
+        <span>Pedir cita ahora</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="#servicios" class="btn-ghost-w">Ver tratamientos</a>
+    </div>
+    
+    <div class="hero-stats">
+      <div>
+        <div class="stat-n"><span data-count="12">0</span><em>+</em></div>
+        <div class="stat-l">Años de experiencia</div>
+      </div>
+      <div>
+        <div class="stat-n"><span data-count="4.8">0</span><em>★</em></div>
+        <div class="stat-l">Valoración Google</div>
+      </div>
+      <div>
+        <div class="stat-n"><span data-count="120">0</span><em>+</em></div>
+        <div class="stat-l">Pacientes satisfechos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative elements -->
+  <div class="hero-coords">
+    <span class="lbl">— LOCATION</span>
+    Barcelona · est. 12 años de oficio
+  </div>
+  <div class="hero-scroll">
+    <span>Desliza</span>
+    <span class="line"></span>
+  </div>
+  <div class="hero-float-dot"></div>
+</section>
+
+<!-- ─── STRIP ─── -->
+<div class="strip">
+  <div class="strip-track">
+    <span class="strip-item">Fisioterapia deportiva <span class="sep">✦</span></span><span class="strip-item">Osteopatía <span class="sep">✦</span></span><span class="strip-item">Rehabilitación <span class="sep">✦</span></span><span class="strip-item">Pilates terapéutico <span class="sep">✦</span></span><span class="strip-item">Masaje terapéutico <span class="sep">✦</span></span><span class="strip-item">Electroterapia <span class="sep">✦</span></span>
+    <span class="strip-item">Fisioterapia deportiva <span class="sep">✦</span></span><span class="strip-item">Osteopatía <span class="sep">✦</span></span><span class="strip-item">Rehabilitación <span class="sep">✦</span></span><span class="strip-item">Pilates terapéutico <span class="sep">✦</span></span><span class="strip-item">Masaje terapéutico <span class="sep">✦</span></span><span class="strip-item">Electroterapia <span class="sep">✦</span></span>
+  </div>
+</div>
+
+<!-- ─── SERVICIOS ─── -->
+<section class="s" id="servicios">
+  <div class="container">
+    <div class="srv-header reveal">
+      <div>
+        <div class="tag">
+          <span class="num">01</span>
+          <span class="label">Tratamientos</span>
+        </div>
+        <h2 class="sec-h">Todo lo que<br>necesitas,<br><em>aquí.</em></h2>
+      </div>
+      <p class="sec-desc">Trabajamos con un enfoque integral. Cada tratamiento está adaptado a tu caso, a tu cuerpo y a tu ritmo de vida. Sin protocolos estándar, sin prisas, sin atajos.</p>
+    </div>
+    <div class="srv-grid">
+      
+      <div class="srv-card reveal">
+        <div class="srv-top">
+          <div class="srv-icon"><svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></div>
+          <span class="srv-num">№ 01</span>
+        </div>
+        <h3>Fisioterapia deportiva</h3>
+        <p>Tratamiento de lesiones musculares, tendinosas y articulares en deportistas. Recuperación funcional y vuelta segura a la actividad.</p>
+      </div>
+      <div class="srv-card reveal">
+        <div class="srv-top">
+          <div class="srv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><line x1="12" y1="6" x2="12" y2="20"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="7" y1="13" x2="17" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></div>
+          <span class="srv-num">№ 02</span>
+        </div>
+        <h3>Osteopatía</h3>
+        <p>Terapia manual integral que trata el cuerpo como un todo. Liberamos tensiones, mejoramos la movilidad y restauramos el equilibrio.</p>
+      </div>
+      <div class="srv-card reveal">
+        <div class="srv-top">
+          <div class="srv-icon"><svg viewBox="0 0 24 24"><path d="M12 2L12 22"/><path d="M12 6c-3 2-5 4-5 8 0 3 2 5 5 5s5-2 5-5c0-4-2-6-5-8z"/><path d="M7 14c-2 0-4 1-4 3 0 1 1 2 2 2"/><path d="M17 14c2 0 4 1 4 3 0 1-1 2-2 2"/></svg></div>
+          <span class="srv-num">№ 03</span>
+        </div>
+        <h3>Rehabilitación</h3>
+        <p>Plan personalizado de recuperación tras lesiones, cirugías o accidentes. Trabajamos contigo hasta tu plena funcionalidad.</p>
+      </div>
+      <div class="srv-card reveal">
+        <div class="srv-top">
+          <div class="srv-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <span class="srv-num">№ 04</span>
+        </div>
+        <h3>Pilates terapéutico</h3>
+        <p>Pilates clínico adaptado a tu patología. Refuerza la musculatura profunda y mejora la postura de forma segura.</p>
+      </div>
+      <div class="srv-card reveal">
+        <div class="srv-top">
+          <div class="srv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M12 8v5"/><path d="M8 13l4 0l4 0"/><path d="M12 13v9"/><path d="M8 18l4 4l4-4"/></svg></div>
+          <span class="srv-num">№ 05</span>
+        </div>
+        <h3>Masaje terapéutico</h3>
+        <p>Liberamos contracturas, mejoramos la circulación y reducimos el estrés muscular acumulado por el día a día.</p>
+      </div>
+      <div class="srv-card reveal">
+        <div class="srv-top">
+          <div class="srv-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><line x1="8.5" y1="8.5" x2="15.5" y2="15.5"/></svg></div>
+          <span class="srv-num">№ 06</span>
+        </div>
+        <h3>Electroterapia</h3>
+        <p>Aplicación de corrientes terapéuticas para acelerar la recuperación, aliviar dolor y reducir inflamación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESO ─── -->
+<section class="s" id="proceso">
+  <div class="container">
+    <div class="proceso-header reveal">
+      <div class="tag">
+        <span class="num">02</span>
+        <span class="label">Cómo trabajamos</span>
+      </div>
+      <h2 class="sec-h">Un proceso<br><em>claro</em> y honesto.</h2>
+      <p class="sec-desc">De la primera valoración a tu recuperación completa. Sin sorpresas, sin tecnicismos, sin sesiones de más.</p>
+    </div>
+    
+    <div class="proceso-grid">
+      <div class="step reveal">
+        <div class="step-circle">i</div>
+        <h4>Valoración inicial</h4>
+        <p>Te escuchamos, analizamos tu caso y exploramos físicamente la zona afectada.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-circle">ii</div>
+        <h4>Diagnóstico</h4>
+        <p>Te explicamos qué tienes, por qué te ha pasado y qué necesitas para recuperarte.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-circle">iii</div>
+        <h4>Tratamiento</h4>
+        <p>Plan personalizado con técnicas adaptadas a tu caso. Cada sesión avanza.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-circle">iv</div>
+        <h4>Prevención</h4>
+        <p>Te damos pautas para que el problema no vuelva. Ejercicios, hábitos y consejos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NOSOTROS ─── -->
+<section class="s" id="nosotros">
+  <div class="container">
+    <div class="why-layout">
+      <div class="why-card reveal">
+        <div class="why-seal">
+          <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="cp" d="M80,80 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"/>
+            </defs>
+            <circle cx="80" cy="80" r="74" fill="none" stroke="rgba(242,237,226,0.15)" stroke-width="1"/>
+            <circle cx="80" cy="80" r="62" fill="none" stroke="rgba(242,237,226,0.08)" stroke-width="1" stroke-dasharray="2 4"/>
+            <circle cx="80" cy="80" r="48" fill="#C8704F"/>
+            <text fill="#F2EDE2" font-family="JetBrains Mono" font-size="9" letter-spacing="3">
+              <textPath href="#cp" startOffset="0%">✦ TRATAMIENTO PERSONALIZADO ✦ GARANTÍA DE CALIDAD ✦ </textPath>
+            </text>
+            <g transform="translate(80 80)" text-anchor="middle" fill="#F2EDE2">
+              <text font-family="Fraunces, serif" font-size="24" font-style="italic" font-weight="400" y="-3">100%</text>
+              <text font-family="JetBrains Mono" font-size="8" letter-spacing="2" y="14">PACIENTES</text>
+            </g>
+          </svg>
+        </div>
+        <h3>Fisioterapia <em>real</em>.<br>Resultados reales.</h3>
+        <p>Trabajamos con honestidad clínica. Te decimos lo que necesitas, no lo que queremos venderte. Si bastan 3 sesiones, son 3.</p>
+        <ul class="why-checks">
+          <li>
+            <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Primera valoración sin compromiso
+          </li>
+          <li>
+            <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Plan adaptado a cada paciente
+          </li>
+          <li>
+            <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Fisioterapeutas colegiados
+          </li>
+          <li>
+            <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Sin esperas — cita puntual
+          </li>
+          <li>
+            <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Resultados medibles sesión a sesión
+          </li>
+          <li>
+            <span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Honestidad clínica garantizada
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="reveal">
+          <div class="tag">
+            <span class="num">03</span>
+            <span class="label">Por qué nosotros</span>
+          </div>
+          <h2 class="sec-h">No somos<br>otra clínica<br><em>más.</em></h2>
+          <p class="sec-desc" style="margin-bottom:32px">Llevamos 12 años en Barcelona. Cada paciente que sale mejor de lo que entró es nuestra mejor tarjeta de visita.</p>
+        </div>
+        
+        <div class="why-points">
+          <div class="why-point reveal">
+            <div class="why-n">01</div>
+            <div class="why-text">
+              <h4>Diagnóstico individual</h4>
+              <p>Antes de cualquier tratamiento, te escuchamos a fondo. Analizamos tu caso completo y diseñamos un plan específico para ti, no copiado de otro.</p>
+            </div>
+          </div>
+          <div class="why-point reveal">
+            <div class="why-n">02</div>
+            <div class="why-text">
+              <h4>Técnicas actualizadas</h4>
+              <p>Formación continua en las últimas técnicas de fisioterapia. Lo que funciona hoy, no lo de hace 10 años. La fisio avanza, nosotros también.</p>
+            </div>
+          </div>
+          <div class="why-point reveal">
+            <div class="why-n">03</div>
+            <div class="why-text">
+              <h4>Resultados medibles</h4>
+              <p>Monitorizamos tu evolución sesión a sesión. Si algo no avanza como debería, cambiamos el enfoque sin dudarlo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OPINIONES ─── -->
+<section class="s" id="opiniones">
+  <div class="container">
+    <div class="rev-header reveal">
+      <div>
+        <div class="tag">
+          <span class="num">04</span>
+          <span class="label">Opiniones</span>
+        </div>
+        <h2 class="sec-h">120<em>+</em> pacientes<br>ya lo saben.</h2>
+        <p class="sec-desc">Reseñas verificadas en Google. Sin filtros, sin selección.</p>
+      </div>
+      <div class="score-box">
+        <div class="score-big">4.8</div>
+        <div>
+          <div class="score-stars">★★★★★</div>
+          <div class="score-meta">+120 valoraciones<br>en Google Maps</div>
+        </div>
+      </div>
+    </div>
+    <div class="rev-grid">
+      
+      <div class="rev-card reveal">
+        <div class="rev-q">"</div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Llevo meses con dolor de espalda y en 4 sesiones he mejorado muchísimo. El trato es excelente y muy profesional.</p>
+        <div class="rev-foot">
+          <div class="rev-name">María G.</div>
+          <div class="rev-when">Google · hace 1 mes</div>
+        </div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="rev-q">"</div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Vine por una lesión de rodilla después de correr. Me explicaron todo el proceso y los resultados han sido muy buenos.</p>
+        <div class="rev-foot">
+          <div class="rev-name">Carlos R.</div>
+          <div class="rev-when">Google · hace 2 meses</div>
+        </div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="rev-q">"</div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Muy contenta con el tratamiento. Profesionales de verdad que escuchan y adaptan el tratamiento a cada persona.</p>
+        <div class="rev-foot">
+          <div class="rev-name">Ana P.</div>
+          <div class="rev-when">Google · hace 3 meses</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BANDA ─── -->
+<div class="cta-band">
+  <div class="cta-bg-text">Fisio Ramírez</div>
+  <div class="cta-inner">
+    <div>
+      <h2>¿Empezamos<br>tu <em>recuperación?</em></h2>
+      <p>Sin esperas, sin burocracia. Llama ahora y te damos cita esta misma semana. La primera valoración es sin compromiso.</p>
+    </div>
+    <div class="cta-right">
+      <a href="tel:654321987" class="btn-bone">
+        <span>📞 654 321 987</span>
+      </a>
+      <a href="https://wa.me/34654321987" class="btn-wa">
+        💬 WhatsApp · respuesta &lt;24h
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FAQ ─── -->
+<section class="s" id="faq">
+  <div class="container">
+    <div class="faq-layout">
+      <div class="reveal">
+        <div class="tag">
+          <span class="num">05</span>
+          <span class="label">Dudas frecuentes</span>
+        </div>
+        <h2 class="sec-h"><em>Preguntas</em><br>que te haces.</h2>
+        <p class="sec-desc" style="margin-top:24px">Si tienes alguna duda más, llámanos o escríbenos por WhatsApp. Resolvemos sin compromiso.</p>
+      </div>
+      
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            <h4>¿Cuántas sesiones voy a necesitar?</h4>
+            <div class="faq-toggle"></div>
+          </div>
+          <div class="faq-a">Depende totalmente de cada caso. En la primera sesión te diremos una estimación realista. Y si vemos que bastan menos sesiones de las previstas, te lo decimos.</div>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            <h4>¿Tengo que llevar algo para la primera cita?</h4>
+            <div class="faq-toggle"></div>
+          </div>
+          <div class="faq-a">Si tienes pruebas médicas (radiografías, resonancias, informes), tráelas. Si no, no pasa nada. Ven con ropa cómoda y nosotros nos encargamos del resto.</div>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            <h4>¿Hace falta cita previa?</h4>
+            <div class="faq-toggle"></div>
+          </div>
+          <div class="faq-a">Sí, trabajamos con cita previa para garantizarte un trato exclusivo y sin esperas. Puedes pedirla por teléfono, WhatsApp o presentándote en la clínica.</div>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            <h4>¿Trabajáis con mutuas o seguros?</h4>
+            <div class="faq-toggle"></div>
+          </div>
+          <div class="faq-a">Llámanos para confirmarlo, depende de la mutua. Algunas son convenio directo, otras se pagan y luego se reembolsan. Te lo aclaramos en un momento.</div>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            <h4>¿Notaré mejoría desde la primera sesión?</h4>
+            <div class="faq-toggle"></div>
+          </div>
+          <div class="faq-a">En muchos casos sí, sobre todo si vienes con contracturas o dolor agudo. En patologías crónicas el proceso es más gradual, pero medimos cada sesión.</div>
+        </div>
+        
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            <h4>¿Qué tipo de tratamientos hacéis?</h4>
+            <div class="faq-toggle"></div>
+          </div>
+          <div class="faq-a">Trabajamos todas las técnicas modernas de fisioterapia: manual, deportiva, neurológica, punción seca, osteopatía, RPG, electroterapia y más. Mira la sección de tratamientos para verlo todo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACTO ─── -->
+<section class="s" id="contacto">
+  <div class="container">
+    <div class="contact-hd reveal">
+      <div class="tag">
+        <span class="num">06</span>
+        <span class="label">Encuéntranos</span>
+      </div>
+      <h2 class="sec-h">Estamos en<br><em>Barcelona.</em></h2>
+    </div>
+    
+    <div class="contact-grid">
+      <div class="info-block reveal">
+        <h3>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Horario
+        </h3>
+        <div class="sch-row"><span class="sch-day">Lunes</span><span class="sch-time">09:00 — 20:00</span></div>
+<div class="sch-row"><span class="sch-day">Martes</span><span class="sch-time">09:00 — 20:00</span></div>
+<div class="sch-row"><span class="sch-day">Miércoles</span><span class="sch-time">09:00 — 20:00</span></div>
+<div class="sch-row"><span class="sch-day">Jueves</span><span class="sch-time">09:00 — 20:00</span></div>
+<div class="sch-row"><span class="sch-day">Viernes</span><span class="sch-time">09:00 — 19:00</span></div>
+<div class="sch-row"><span class="sch-day">Sábado</span><span class="sch-closed">— Cerrado —</span></div>
+<div class="sch-row"><span class="sch-day">Domingo</span><span class="sch-closed">— Cerrado —</span></div>
+
+      </div>
+      
+      <div class="info-block reveal">
+        <h3>
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Contacto
+        </h3>
+        <div class="contact-rows">
+          <div class="c-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="c-label">Teléfono</div>
+              <a href="tel:654321987" class="c-val">654 321 987</a>
+            </div>
+          </div>
+          <div class="c-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="c-label">Dirección</div>
+              <span class="c-val" style="font-size:14px">Calle Aragón 214, 08011 Barcelona</span>
+            </div>
+          </div>
+          <div class="c-row">
+            <div class="c-icon" style="background:#25D366">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#F2EDE2" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            </div>
+            <div>
+              <div class="c-label">WhatsApp</div>
+              <a href="https://wa.me/34654321987" class="c-val">Escríbenos por WhatsApp</a>
+            </div>
+          </div>
+          <div class="c-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="c-label">Email</div>
+              <a href="mailto:info@fisioramirez.com" class="c-val">info@fisioramirez.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="map-box reveal">
+        <iframe src="https://maps.google.com/maps?q=Calle+Aragon+214+Barcelona&output=embed" loading="lazy" title="Ubicación Clínica Fisio Ramírez"></iframe>
+        <div class="map-overlay">
+          <div class="lbl">— Estamos aquí</div>
+          <div class="place">Fisio Ramírez</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="logo">
+          <div class="logo-mark">
+            <svg viewBox="0 0 60 60">
+              <g class="ring-rotate">
+                <circle cx="30" cy="30" r="28" fill="none" stroke="#C8704F" stroke-width="0.5" stroke-dasharray="1.5 3"/>
+                <circle cx="30" cy="2" r="1.5" fill="#C8704F"/>
+                <circle cx="30" cy="58" r="1.5" fill="#C8704F"/>
+                <circle cx="2" cy="30" r="1.5" fill="#C8704F"/>
+                <circle cx="58" cy="30" r="1.5" fill="#C8704F"/>
+              </g>
+              <circle cx="30" cy="30" r="22" fill="#C8704F"/>
+              <text x="30" y="38" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="22" fill="#F2EDE2">F</text>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-name">Fisio Ramírez<em>.</em></span>
+            <span class="logo-tagline">— Fisioterapia · Barcelona</span>
+          </div>
+        </a>
+        <p class="foot-p">Fisioterapia profesional en Barcelona. Más de 12 años ayudando a personas a recuperarse, moverse mejor y vivir sin dolor.</p>
+      </div>
+      
+      <div class="foot-col">
+        <h5>Servicios</h5>
+        <ul><li><a href="#servicios">Fisioterapia deportiva</a></li>
+<li><a href="#servicios">Osteopatía</a></li>
+<li><a href="#servicios">Rehabilitación</a></li>
+<li><a href="#servicios">Pilates terapéutico</a></li>
+<li><a href="#servicios">Masaje terapéutico</a></li>
+</ul>
+      </div>
+      
+      <div class="foot-col">
+        <h5>Contacto</h5>
+        <div class="foot-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:654321987"><strong style="color:rgba(242,237,226,0.75)">654 321 987</strong></a>
+        </div>
+        <div class="foot-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>C/ Aragón 214, Barcelona<br>Barcelona</span>
+        </div>
+        <div class="foot-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@fisioramirez.com">info@fisioramirez.com</a>
+        </div>
+        <div class="foot-contact-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Lun – Vie · 09:00 – 20:00</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="foot-mega">Fisio Ramírez · Fisio Ramírez · Fisio Ramírez</div>
+    
+    <div class="foot-bot">
+      <span>© 2025 Clínica Fisio Ramírez · TODOS LOS DERECHOS RESERVADOS</span>
+      <span>WEB POR <span class="accent">FACHADA DIGITAL</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── FLOAT BUTTONS ─── -->
+<div class="float-btns">
+  <a href="https://wa.me/34654321987" class="float-b float-wa" title="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+  </a>
+  <a href="tel:654321987" class="float-b float-call" title="Llamar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#F2EDE2" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+</div>
+
+<script>
+  // ════ SCROLL PROGRESS BAR ════
+  const sProg = document.getElementById('scrollProg');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    sProg.style.width = pct + '%';
+  }, { passive: true });
+
+  // ════ CUSTOM CURSOR ════
+  const cDot = document.getElementById('cursorDot');
+  const cRing = document.getElementById('cursorRing');
+  let mx = -100, my = -100, rx = -100, ry = -100;
+
+  const isTouch = window.matchMedia('(hover: none)').matches || window.innerWidth < 900;
+  if (isTouch) {
+    cDot.style.display = 'none';
+    cRing.style.display = 'none';
+    document.body.style.cursor = 'default';
+  } else {
+    document.addEventListener('mousemove', (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+      cDot.style.transform = `translate(${mx}px, ${my}px)`;
+    });
+
+    function animRing() {
+      rx += (mx - rx) * 0.16;
+      ry += (my - ry) * 0.16;
+      cRing.style.transform = `translate(${rx}px, ${ry}px)`;
+      requestAnimationFrame(animRing);
+    }
+    animRing();
+
+    document.querySelectorAll('a, button, [role="button"], .faq-item, .srv-card, .rev-card, .step, .why-point').forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+  }
+
+  // ════ MAGNETIC BUTTONS ════
+  if (!isTouch) {
+    document.querySelectorAll('[data-magnetic]').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.22}px, ${y * 0.22}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  }
+
+  // ════ ANIMATED NUMBER COUNTERS ════
+  const animateCounter = (el) => {
+    const raw = el.dataset.count;
+    const target = parseFloat(raw);
+    if (isNaN(target)) {
+      el.textContent = raw;
+      return;
+    }
+    const isDecimal = raw.includes('.');
+    const decimals = isDecimal ? (raw.split('.')[1] || '').length : 0;
+    const duration = 1800;
+    const start = performance.now();
+
+    function update(now) {
+      const elapsed = now - start;
+      const t = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 4);
+      const current = target * eased;
+      el.textContent = isDecimal ? current.toFixed(decimals) : Math.floor(current);
+      if (t < 1) requestAnimationFrame(update);
+      else el.textContent = isDecimal ? target.toFixed(decimals) : target;
+    }
+    requestAnimationFrame(update);
+  };
+
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCounter(e.target);
+        counterObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-count]').forEach(c => counterObs.observe(c));
+
+  // ════ REVEAL ON SCROLL ════
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), Math.min(i * 70, 350));
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ════ FAQ ACCORDION ════
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
